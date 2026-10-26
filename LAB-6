@@ -1,30 +1,18 @@
 
-def divide_numbers(a, b):
-    try:
-        result = a / b
-
-    except ZeroDivisionError:
-        print("Error: Division by zero is not allowed.")
-
-    except TypeError:
-        print("Error: Please enter only numbers.")
-
-    else:
-        print(f"Result of division: {result}")
-
-    finally:
-        print("Execution of divide_numbers() is complete.\n")
+def is_vowel(ch):
+    return ch.lower() in ['a', 'e', 'i', 'o', 'u']
 
 
 def main():
-    try:
-        x = float(input("Enter the numerator: "))
-        y = float(input("Enter the denominator: "))
+    char = input("Enter a character: ")
 
-        divide_numbers(x, y)
-
-    except ValueError:
-        print("Error: Invalid input. Please enter numeric values.")
+    if len(char) != 1 or not char.isalpha():
+        print("Please enter a single alphabetic character.")
+    else:
+        if is_vowel(char):
+            print(f"'{char}' is a vowel.")
+        else:
+            print(f"'{char}' is not a vowel.")
 
 
 if __name__ == '__main__':
